@@ -40,6 +40,7 @@ import com.yourapp.app.gui.tables.OrderTableModel;
 import com.yourapp.app.impl.model.entity.Address;
 import com.yourapp.app.impl.model.entity.Order;
 import com.yourapp.app.impl.model.entity.Person;
+import java.awt.ComponentOrientation;
 
 
 @SuppressWarnings("serial")
@@ -76,7 +77,7 @@ public class PersonAddPanel extends JPanelBase {
 	 * Create the panel.
 	 */
 	public PersonAddPanel() {
-		initGUI();
+		//initGUI();
 	}
 	
 	public void setDataByPanelMode(){
@@ -181,6 +182,7 @@ public class PersonAddPanel extends JPanelBase {
 		setDataByPanelMode();
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		
 		groupLayout.setHorizontalGroup(

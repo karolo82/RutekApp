@@ -45,7 +45,7 @@ public class FrameAddPanel extends JPanelBase {
 	 * Create the panel.
 	 */
 	public FrameAddPanel() {
-		initGUI();
+		//initGUI();
 	}
 
 	@Override

@@ -39,7 +39,7 @@ public class PersonData extends JPanel {
 	 * Create the panel.
 	 */
 	public PersonData() {
-		initPanel();
+		//initPanel();
 	}
 
 	public void setPersonData() {
@@ -113,10 +113,10 @@ public class PersonData extends JPanel {
 		taNotes.setRows(3);
 
 		btnSave = new JButton("Zapisz");
-		btnSave.setBounds(10, 367, 80, 23);
+		btnSave.setBounds(10, 360, 80, 23);
 
-		btnCancel = new JButton("Anuluj");
-		btnCancel.setBounds(100, 367, 80, 23);
+		btnCancel = new JButton("Powrót");
+		btnCancel.setBounds(100, 360, 80, 23);
 		setLayout(null);
 		add(lblName);
 		add(txtName);

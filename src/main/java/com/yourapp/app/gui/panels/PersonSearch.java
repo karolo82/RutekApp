@@ -49,7 +49,7 @@ public class PersonSearch extends JPanelBase {
 	 * Create the panel.
 	 */
 	public PersonSearch() {
-		initGUI();
+		//initGUI();
 	}
 
 	@Override
@@ -151,91 +151,39 @@ public class PersonSearch extends JPanelBase {
 		JSeparator separator = new JSeparator();
 		separator.setOrientation(SwingConstants.VERTICAL);
 		GroupLayout gl_resaultPanel = new GroupLayout(resaultPanel);
-		gl_resaultPanel
-				.setHorizontalGroup(gl_resaultPanel
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_resaultPanel
-										.createSequentialGroup()
-										.addGroup(
-												gl_resaultPanel
-														.createParallelGroup(
-																Alignment.LEADING)
-														.addComponent(
-																scrollPane,
-																GroupLayout.PREFERRED_SIZE,
-																656,
-																GroupLayout.PREFERRED_SIZE)
-														.addGroup(
-																gl_resaultPanel
-																		.createSequentialGroup()
-																		.addContainerGap()
-																		.addComponent(
-																				btnAdd)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				btnEdit)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				btnDelete)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				separator,
-																				GroupLayout.PREFERRED_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				btnMagazyn)))
-										.addContainerGap(
-												GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)));
-		gl_resaultPanel
-				.setVerticalGroup(gl_resaultPanel
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								gl_resaultPanel
-										.createSequentialGroup()
-										.addComponent(scrollPane,
-												GroupLayout.PREFERRED_SIZE,
-												260, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(
-												ComponentPlacement.UNRELATED)
-										.addGroup(
-												gl_resaultPanel
-														.createParallelGroup(
-																Alignment.LEADING)
-														.addComponent(
-																btnMagazyn,
-																GroupLayout.DEFAULT_SIZE,
-																GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(
-																separator,
-																GroupLayout.DEFAULT_SIZE,
-																23,
-																Short.MAX_VALUE)
-														.addGroup(
-																gl_resaultPanel
-																		.createParallelGroup(
-																				Alignment.BASELINE)
-																		.addComponent(
-																				btnEdit,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				Short.MAX_VALUE)
-																		.addComponent(
-																				btnDelete)
-																		.addComponent(
-																				btnAdd,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				Short.MAX_VALUE)))
-										.addContainerGap()));
+		gl_resaultPanel.setHorizontalGroup(
+			gl_resaultPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_resaultPanel.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_resaultPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+						.addGroup(gl_resaultPanel.createSequentialGroup()
+							.addComponent(btnAdd)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnEdit)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnDelete)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(separator, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnMagazyn)))
+					.addContainerGap())
+		);
+		gl_resaultPanel.setVerticalGroup(
+			gl_resaultPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_resaultPanel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_resaultPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnMagazyn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(separator, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+						.addGroup(gl_resaultPanel.createParallelGroup(Alignment.BASELINE)
+							.addComponent(btnEdit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(btnDelete)
+							.addComponent(btnAdd, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
 		resaultPanel.setLayout(gl_resaultPanel);
 
 		JLabel lblName = new JLabel("Imię");

@@ -133,7 +133,7 @@ public class OrderAdd extends JPanelBase {
      * Create the panel.
      */
     public OrderAdd() {
-        initGUI();
+        //initGUI();
     }
 
     private void fillInPersonData(Person person) {

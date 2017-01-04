@@ -46,7 +46,7 @@ public class FrameSearchPanel extends JPanelBase {
 	 * Create the panel.
 	 */
 	public FrameSearchPanel() {
-		initGUI();
+		//initGUI();
 	}
 
 	@Override

@@ -42,7 +42,7 @@ public class PersonAdd extends JPanelBase {
 	 * Create the panel.
 	 */
 	public PersonAdd() {
-		initGUI();
+		//initGUI();
 	}
 
 	public void addPerson() {
