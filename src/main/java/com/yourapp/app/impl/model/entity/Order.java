@@ -1,5 +1,6 @@
 package com.yourapp.app.impl.model.entity;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -37,26 +38,26 @@ public class Order extends Identifier {
 	private Date endDate;
 	// Zaliczka
 	@Column(nullable = true)
-	private String paymentOnAccount;
+	private BigDecimal paymentOnAccount;
 	// Wartość zamówienia
 	@Column(nullable = false)
-	private String orderValue;
+	private BigDecimal orderValue;
 	// Pozostało do zapłaty
 	@Column(nullable = true)
-	private String paymentLeft;
+	private BigDecimal paymentLeft;
 	// Oprawa
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "frameId", nullable = true)
 	private Frame frame;
 	// Cena oprawy
 	@Column(nullable = true)
-	private String framePrice;
+	private BigDecimal framePrice;
 	// Zniżka na oprawę
 	@Column(nullable = true)
-	private String frameDiscount;
+	private BigDecimal frameDiscount;
 	// Cena po zniżce
 	@Column(nullable = true)
-	private String frameSellPrice;
+	private BigDecimal frameSellPrice;
 	// Marka prawej soczewki
 	@Column(nullable = true, length = 50)
 	private String lensMarkER;
@@ -77,13 +78,13 @@ public class Order extends Identifier {
 	private String lensAxisER;
 	// Zniżka prawej soczewki
 	@Column(nullable = true)
-	private String lensDiscountER;
+	private BigDecimal lensDiscountER;
 	// Cena prawej soczewki
 	@Column(nullable = true)
-	private String lensPriceER;
+	private BigDecimal lensPriceER;
 	// Cena po zniżce prawej soczewki
 	@Column(nullable = true)
-	private String lensSellPriceER;
+	private BigDecimal lensSellPriceER;
 	// Barwienie soczewski prawej
 	@Column(nullable = true, length = 50)
 	private String colourLensER;
@@ -107,13 +108,13 @@ public class Order extends Identifier {
 	private String lensAxisEL;
 	// Zniżka lewej soczewki
 	@Column(nullable = true)
-	private String lensDiscountEL;
+	private BigDecimal lensDiscountEL;
 	// Cena lewej soczewki
 	@Column(nullable = true)
-	private String lensPriceEL;
+	private BigDecimal lensPriceEL;
 	// Cena po zniżce lewej soczewki
 	@Column(nullable = true)
-	private String lensSellPriceEL;
+	private BigDecimal lensSellPriceEL;
 	// Barwienie soczewski lewej
 	@Column(nullable = true, length = 50)
 	private String colourLensEL;
@@ -125,46 +126,46 @@ public class Order extends Identifier {
 	private Examination examination;
 	@Column(nullable = true)
 	// Cena badania
-	private String examinationPrice;
+	private BigDecimal examinationPrice;
 	// Zniżka na badanie
 	@Column(nullable = true)
-	private String examinationDiscount;
+	private BigDecimal examinationDiscount;
 	// Cena badania po zniżce
 	@Column(nullable = true)
-	private String examinationSellPrice;
+	private BigDecimal examinationSellPrice;
 	// Numer zlecenia
 	@Column(nullable = false)
 	private Integer orderNumber;
 	// PD prawe
 	@Column(nullable = true)
-	private Integer PdRight;
+	private Float PdRight;
 	// PD lewe
 	@Column(nullable = true)
-	private Integer PdLeft;
+	private Float PdLeft;
 	// wysokość prawa
 	@Column(nullable = true)
-	private String heightRight;
+	private Float heightRight;
 	// wysokość lewa
 	@Column(nullable = true)
-	private String heightLeft;
+	private Float heightLeft;
 
 	public Order() {
 
 	}
 
 	public Order(Person person, Status status, String boxNumber,
-			Date startDate, Date endDate, String paymentOnAccount,
-			String orderValue, String paymentLeft, Frame frame,
-			String framePrice, String frameDiscount, String frameSellPrice,
+			Date startDate, Date endDate, BigDecimal paymentOnAccount,
+			BigDecimal orderValue, BigDecimal paymentLeft, Frame frame,
+			BigDecimal framePrice, BigDecimal frameDiscount, BigDecimal frameSellPrice,
 			String lensMarkER, String lensModelER, String lensIndexER,
 			String lensPowerER, String lensCylinderER, String lensAxisER,
-			String lensDiscountER, String lensPriceER, String lensSellPriceER,
+			BigDecimal lensDiscountER, BigDecimal lensPriceER, BigDecimal lensSellPriceER,
 			String colourLensER, String lensMarkEL, String lensModelEL,
 			String lensIndexEL, String lensPowerEL, String lensCylinderEL,
-			String lensAxisEL, String lensDiscountEL, String lensPriceEL,
-			String lensSellPriceEL, String colourLensEL, String note,
-			Examination examination, String examinationPrice,
-			String examinationDiscount, String examinationSellPrice,
+			String lensAxisEL, BigDecimal lensDiscountEL, BigDecimal lensPriceEL,
+			BigDecimal lensSellPriceEL, String colourLensEL, String note,
+			Examination examination, BigDecimal examinationPrice,
+			BigDecimal examinationDiscount, BigDecimal examinationSellPrice,
 			Integer orderNumber) {
 		super();
 		this.person = person;
@@ -263,27 +264,27 @@ public class Order extends Identifier {
 		this.endDate = endDate;
 	}
 
-	public String getPaymentOnAccount() {
+	public BigDecimal getPaymentOnAccount() {
 		return paymentOnAccount;
 	}
 
-	public void setPaymentOnAccount(String paymentOnAccount) {
+	public void setPaymentOnAccount(BigDecimal paymentOnAccount) {
 		this.paymentOnAccount = paymentOnAccount;
 	}
 
-	public String getOrderValue() {
+	public BigDecimal getOrderValue() {
 		return orderValue;
 	}
 
-	public void setOrderValue(String orderValue) {
+	public void setOrderValue(BigDecimal orderValue) {
 		this.orderValue = orderValue;
 	}
 
-	public String getPaymentLeft() {
+	public BigDecimal getPaymentLeft() {
 		return paymentLeft;
 	}
 
-	public void setPaymentLeft(String paymentLeft) {
+	public void setPaymentLeft(BigDecimal paymentLeft) {
 		this.paymentLeft = paymentLeft;
 	}
 
@@ -295,27 +296,27 @@ public class Order extends Identifier {
 		this.frame = frame;
 	}
 
-	public String getFramePrice() {
+	public BigDecimal getFramePrice() {
 		return framePrice;
 	}
 
-	public void setFramePrice(String framePrice) {
+	public void setFramePrice(BigDecimal framePrice) {
 		this.framePrice = framePrice;
 	}
 
-	public String getFrameDiscount() {
+	public BigDecimal getFrameDiscount() {
 		return frameDiscount;
 	}
 
-	public void setFrameDiscount(String frameDiscount) {
+	public void setFrameDiscount(BigDecimal frameDiscount) {
 		this.frameDiscount = frameDiscount;
 	}
 
-	public String getFrameSellPrice() {
+	public BigDecimal getFrameSellPrice() {
 		return frameSellPrice;
 	}
 
-	public void setFrameSellPrice(String frameSellPrice) {
+	public void setFrameSellPrice(BigDecimal frameSellPrice) {
 		this.frameSellPrice = frameSellPrice;
 	}
 
@@ -367,27 +368,27 @@ public class Order extends Identifier {
 		this.lensAxisER = lensAxisER;
 	}
 
-	public String getLensDiscountER() {
+	public BigDecimal getLensDiscountER() {
 		return lensDiscountER;
 	}
 
-	public void setLensDiscountER(String lensDiscountER) {
+	public void setLensDiscountER(BigDecimal lensDiscountER) {
 		this.lensDiscountER = lensDiscountER;
 	}
 
-	public String getLensPriceER() {
+	public BigDecimal getLensPriceER() {
 		return lensPriceER;
 	}
 
-	public void setLensPriceER(String lensPriceER) {
+	public void setLensPriceER(BigDecimal lensPriceER) {
 		this.lensPriceER = lensPriceER;
 	}
 
-	public String getLensSellPriceER() {
+	public BigDecimal getLensSellPriceER() {
 		return lensSellPriceER;
 	}
 
-	public void setLensSellPriceER(String lensSellPriceER) {
+	public void setLensSellPriceER(BigDecimal lensSellPriceER) {
 		this.lensSellPriceER = lensSellPriceER;
 	}
 
@@ -447,27 +448,27 @@ public class Order extends Identifier {
 		this.lensAxisEL = lensAxisEL;
 	}
 
-	public String getLensDiscountEL() {
+	public BigDecimal getLensDiscountEL() {
 		return lensDiscountEL;
 	}
 
-	public void setLensDiscountEL(String lensDiscountEL) {
+	public void setLensDiscountEL(BigDecimal lensDiscountEL) {
 		this.lensDiscountEL = lensDiscountEL;
 	}
 
-	public String getLensPriceEL() {
+	public BigDecimal getLensPriceEL() {
 		return lensPriceEL;
 	}
 
-	public void setLensPriceEL(String lensPriceEL) {
+	public void setLensPriceEL(BigDecimal lensPriceEL) {
 		this.lensPriceEL = lensPriceEL;
 	}
 
-	public String getLensSellPriceEL() {
+	public BigDecimal getLensSellPriceEL() {
 		return lensSellPriceEL;
 	}
 
-	public void setLensSellPriceEL(String lensSellPriceEL) {
+	public void setLensSellPriceEL(BigDecimal lensSellPriceEL) {
 		this.lensSellPriceEL = lensSellPriceEL;
 	}
 
@@ -495,59 +496,59 @@ public class Order extends Identifier {
 		this.examination = examination;
 	}
 
-	public String getExaminationPrice() {
+	public BigDecimal getExaminationPrice() {
 		return examinationPrice;
 	}
 
-	public void setExaminationPrice(String examinationPrice) {
+	public void setExaminationPrice(BigDecimal examinationPrice) {
 		this.examinationPrice = examinationPrice;
 	}
 
-	public String getExaminationDiscount() {
+	public BigDecimal getExaminationDiscount() {
 		return examinationDiscount;
 	}
 
-	public void setExaminationDiscount(String examinationDiscount) {
+	public void setExaminationDiscount(BigDecimal examinationDiscount) {
 		this.examinationDiscount = examinationDiscount;
 	}
 
-	public String getExaminationSellPrice() {
+	public BigDecimal getExaminationSellPrice() {
 		return examinationSellPrice;
 	}
 
-	public void setExaminationSellPrice(String examinationSellPrice) {
+	public void setExaminationSellPrice(BigDecimal examinationSellPrice) {
 		this.examinationSellPrice = examinationSellPrice;
 	}
 
-	public Integer getPdRight() {
+	public Float getPdRight() {
 		return PdRight;
 	}
 
-	public void setPdRight(Integer pdRight) {
+	public void setPdRight(Float pdRight) {
 		PdRight = pdRight;
 	}
 
-	public Integer getPdLeft() {
+	public Float getPdLeft() {
 		return PdLeft;
 	}
 
-	public void setPdLeft(Integer pdLeft) {
+	public void setPdLeft(Float pdLeft) {
 		PdLeft = pdLeft;
 	}
 
-	public String getHeightRight() {
+	public Float getHeightRight() {
 		return heightRight;
 	}
 
-	public void setHeightRight(String heightRight) {
+	public void setHeightRight(Float heightRight) {
 		this.heightRight = heightRight;
 	}
 
-	public String getHeightLeft() {
+	public Float getHeightLeft() {
 		return heightLeft;
 	}
 
-	public void setHeightLeft(String heightLeft) {
+	public void setHeightLeft(Float heightLeft) {
 		this.heightLeft = heightLeft;
 	}
 	

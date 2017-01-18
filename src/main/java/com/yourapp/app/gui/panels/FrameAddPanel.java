@@ -22,6 +22,8 @@ import com.yourapp.app.api.manager.FrameManager;
 import com.yourapp.app.api.manager.WindowManager;
 import com.yourapp.app.gui.Panel;
 import com.yourapp.app.impl.model.entity.Frame;
+import com.yourapp.app.utils.ConvertTypeUtil;
+import com.yourapp.app.utils.ConvertValueException;
 
 @SuppressWarnings("serial")
 @Component
@@ -64,7 +66,11 @@ public class FrameAddPanel extends JPanelBase {
 				frame.setMark(txtMark.getText());
 				frame.setModel(txtModel.getText());
 				frame.setColor(txtColor.getText());
-				frame.setNettoValue(txtNettoPrice.getText());
+				try {
+					frame.setNettoValue(ConvertTypeUtil.getBigDecimalFromFieldValue(txtNettoPrice));
+				} catch (ConvertValueException e1) {
+					return;
+				}
 				id = frameManager.saveFrame(frame);
 				txtId.setText(id.toString());
 			}
@@ -308,7 +314,7 @@ public class FrameAddPanel extends JPanelBase {
 			txtId.setText(frame.getId().toString());
 			txtMark.setText(frame.getMark());
 			txtModel.setText(frame.getModel());
-			txtNettoPrice.setText(frame.getNettoValue());
+			txtNettoPrice.setText(frame.getNettoValue().toString());
 		}
 	}
 }

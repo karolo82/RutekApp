@@ -22,6 +22,7 @@ import com.yourapp.app.api.manager.PersonManager;
 import com.yourapp.app.api.manager.WindowManager;
 import com.yourapp.app.gui.Panel;
 import com.yourapp.app.gui.enums.PanelMode;
+import com.yourapp.app.gui.enums.Province;
 import com.yourapp.app.impl.model.entity.Address;
 import com.yourapp.app.impl.model.entity.Person;
 
@@ -59,7 +60,7 @@ public class PersonAdd extends JPanelBase {
 		adress.setNoFlat("3");
 		adress.setNoHouse("5a");
 		adress.setPostalCode("82-300");
-		adress.setProvince("pomorskie");
+		adress.setProvince(Province.DS);
 		adress.setStreet("Kościuszki");
 		person.getAdresses().add(adress);
 		personManager.savePerson(person);

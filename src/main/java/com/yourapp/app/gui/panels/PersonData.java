@@ -23,7 +23,7 @@ public class PersonData extends JPanel {
 	private JTextField txtEmail;
 	private JTextField txtPhone;
 	private JTextArea taNotes;
-	private JComboBox<Sex> cbSex;
+	private JComboBox<String> cbSex;
 	private JButton btnSave;
 	private JButton btnCancel;
 	private Person person;
@@ -39,7 +39,7 @@ public class PersonData extends JPanel {
 	 * Create the panel.
 	 */
 	public PersonData() {
-		//initPanel();
+		initPanel();
 	}
 
 	public void setPersonData() {
@@ -50,7 +50,7 @@ public class PersonData extends JPanel {
 		txtPhone.setText(person.getPhone());
 		taNotes.setText(person.getNotes());
 		dcBirthDate.setDate(person.getBirthDate());
-		cbSex.setSelectedItem(person.getSex());
+		cbSex.setSelectedItem(person.getSex().getName());
 	}
 
 	public void initPanel() {
@@ -99,9 +99,9 @@ public class PersonData extends JPanel {
 		JLabel lblSex = new JLabel("Płeć");
 		lblSex.setBounds(10, 86, 80, 14);
 
-		cbSex = new JComboBox<Sex>();
+		cbSex = new JComboBox<String>();
 		cbSex.setBounds(149, 83, 126, 20);
-		cbSex.setModel(new DefaultComboBoxModel<Sex>(Sex.values()));
+		cbSex.setModel(new DefaultComboBoxModel<String>(Sex.getNames()));
 
 		JLabel lblNotatki = new JLabel("Notatki");
 		lblNotatki.setBounds(10, 137, 80, 14);
@@ -154,7 +154,7 @@ public class PersonData extends JPanel {
 		person.setBirthDate(ConvertTypeUtil.getDateFromDateWoTime(dcBirthDate.getDate()));
 		person.setEmail(txtEmail.getText());
 		person.setNotes(taNotes.getText());
-		person.setSex((Sex) cbSex.getSelectedItem());
+		person.setSex(Sex.getSexName(cbSex.getSelectedItem().toString()));
 		person.setPhone(txtPhone.getText());
 		return person;
 	}

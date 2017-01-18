@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.yourapp.app.gui.enums.AddressType;
+import com.yourapp.app.gui.enums.Province;
 
 
 @SuppressWarnings("serial")
@@ -24,7 +25,7 @@ public class Address extends Identifier{
 	@Column(nullable = false, length = 100)
 	private String city;
 	@Column(nullable = true, length = 50)
-	private String province;
+	private Province province;
 	@Column(nullable = true, length = 20)
 	private AddressType addressType;
 	
@@ -33,7 +34,7 @@ public class Address extends Identifier{
 	}
 	
 	public Address(String street, String noHouse, String noFlat,
-			String postalCode, String city, String province, AddressType addressType, String post) {
+			String postalCode, String city, Province province, AddressType addressType, String post) {
 		super();
 		this.street = street;
 		this.noHouse = noHouse;
@@ -87,11 +88,11 @@ public class Address extends Identifier{
 		this.city = city;
 	}
 
-	public String getProvince() {
+	public Province getProvince() {
 		return province;
 	}
 
-	public void setProvince(String province) {
+	public void setProvince(Province province) {
 		this.province = province;
 	}
 

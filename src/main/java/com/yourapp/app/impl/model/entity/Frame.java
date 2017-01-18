@@ -1,5 +1,7 @@
 package com.yourapp.app.impl.model.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -18,13 +20,15 @@ public class Frame extends Identifier{
 	@Column(nullable = true, length = 50)
 	private String color;
 	@Column(nullable = true, length = 10)
-	private String nettoValue;
+	private BigDecimal nettoValue;
+	@Column(nullable = true, length = 10)
+	private BigDecimal bruttoValue;
 	
 	public Frame() {
 
 	}
 
-	public Frame(String mark, String model, String code, String color, String nettoVal) {
+	public Frame(String mark, String model, String code, String color, BigDecimal nettoVal) {
 		super();
 		this.mark = mark;
 		this.model = model;
@@ -65,11 +69,19 @@ public class Frame extends Identifier{
 		this.color = color;
 	}	
 	
-	public String getNettoValue() {
+	public BigDecimal getNettoValue() {
 		return nettoValue;
 	}
 
-	public void setNettoValue(String val) {
+	public void setNettoValue(BigDecimal val) {
 		this.nettoValue = val;
+	}
+	
+	public BigDecimal getBruttoValue() {
+		return bruttoValue;
+	}
+	
+	public void setBruttoValue(BigDecimal val) {
+		this.bruttoValue = val;
 	}
 }

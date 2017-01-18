@@ -31,7 +31,7 @@ public class AddressData extends JPanel {
 	private JTextField txtHouseNo;
 	private JTextField txtFlatNo;
 	private AddressTableModel tableDataModel;
-	private JComboBox<AddressType> cbAddressType;
+	private JComboBox<String> cbAddressType;
 	private JComboBox<String> cbProvince;
 	private JTable table;
 	private JButton btnSaveAddr;
@@ -50,8 +50,8 @@ public class AddressData extends JPanel {
 		
 		JLabel lblAddressType = new JLabel("Klasyfikacja");
 		
-		cbAddressType = new JComboBox<AddressType>();
-		cbAddressType.setModel(new DefaultComboBoxModel<AddressType>(AddressType.values()));
+		cbAddressType = new JComboBox<String>();
+		cbAddressType.setModel(new DefaultComboBoxModel<String>(AddressType.getNames()));
 		
 		JLabel lblCity = new JLabel("Miejscowość");
 		
